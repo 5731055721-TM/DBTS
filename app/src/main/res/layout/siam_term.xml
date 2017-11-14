@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/t1"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:onClick="siam3"
+        android:background="@drawable/frame"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/green_arrow_siam"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:rotation="180"
+            android:src="@drawable/green_arro" />
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/term1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="สนามกีฬาแห่งชาติ"
+            android:textAlignment="center"
+            android:textColor="#777777" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/t2"
+        android:onClick="siam4"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/frame"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/red_arrow_siam"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:rotation="180"
+            android:gravity="center"
+            android:src="@drawable/red_arro" />
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/term2"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="บางหว้า"
+            android:textAlignment="center"
+            android:textColor="#777777" />
+
+    </LinearLayout>
+
+</LinearLayout>

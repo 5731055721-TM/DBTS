@@ -1,0 +1,46 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/toggle_map"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/toggle_map1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/toggle_list"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/toggle_list1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/toggle_grid"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/toggle_card4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
