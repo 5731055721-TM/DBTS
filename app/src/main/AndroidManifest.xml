@@ -19,13 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".DensityChartActivity" />
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopupTheme" />
-        <activity android:name=".GridViewFragment" />
-        <activity android:name=".ListViewFragment" />
-        <activity android:name=".MapViewFragment"></activity>
+        <activity android:name="com.wireless.g5.dbtsfragver.DensityChartActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wireless.g5.dbtsfragver.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,15 +1,22 @@
 package com.wireless.g5.dbtsfragver;
 
+import android.net.wifi.p2p.WifiP2pManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.wireless.g5.dbtsfragver.content.StationContent;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,17 +32,39 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
-//        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(true);
 //        actionBar.setIcon(R.drawable.ic_action_search);
 
-        LayoutInflater inflator = (LayoutInflater) this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View v = inflator.inflate(R.layout.toggle_view_button, null);
+        LayoutInflater inflater = (LayoutInflater) this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = inflater.inflate(R.layout.toggle_view_button, null);
         actionBar.setCustomView(v);
 
         f = new MapViewFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.layout_fragment_container, f);
         ft.commit();
+
+        TextView appname = (TextView) findViewById(R.id.appname);
+//        appname.append(FavoriteStationFragment.favStations.size()+"");
+//        appname.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                for (StationContent.Station s : FavoriteStationFragment.favStations)
+//                Log.v("faved",s.content);
+//            }
+//        });
+
+        ImageButton toggleFav = (ImageButton) findViewById(R.id.toggle_fav);
+        toggleFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                startActivity(new Intent(getApplication(),ListViewFragment.class));
+                f = new FavoriteStationFragment();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.layout_fragment_container, f);
+                ft.commit();
+            }
+        });
 
         ImageButton toggleMap = (ImageButton) findViewById(R.id.toggle_map);
         toggleMap.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton toggleList = (ImageButton) findViewById(R.id.toggle_list);
+        ImageButton toggleList = (ImageButton) v.findViewById(R.id.toggle_list);
         toggleList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton toggleGrid = (ImageButton) findViewById(R.id.toggle_grid);
+        ImageButton toggleGrid = (ImageButton) v.findViewById(R.id.toggle_grid);
         toggleGrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

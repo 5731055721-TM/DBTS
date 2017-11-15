@@ -36,18 +36,17 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="vertical">
+
         <ListView
             android:id="@+id/sukhumvit_list"
-            android:paddingEnd="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:gravity="center"
-            android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="24dp"
-            android:horizontalSpacing="10dp"
             android:layout_marginBottom="10dp"
-            android:stretchMode="spacingWidthUniform" />
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:paddingEnd="10dp"
+            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="24dp" />
     </LinearLayout>
 
     <View android:id="@+id/separator"
@@ -84,17 +83,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <ListView
             android:id="@+id/silom_list"
-            android:paddingEnd="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="24dp"
+            android:gravity="center"
             android:horizontalSpacing="10dp"
-            android:stretchMode="spacingWidthUniform" />
+            android:numColumns="auto_fit"
+            android:paddingEnd="10dp"
+            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="24dp" />
     </LinearLayout>
 
     <View android:id="@+id/separator2"

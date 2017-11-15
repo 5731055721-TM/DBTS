@@ -16,17 +16,19 @@ import android.widget.ListView;
 import com.wireless.g5.dbtsfragver.content.StationContent;
 import com.wireless.g5.dbtsfragver.content.StationContent.Station;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewFragment extends Fragment {
 
-    private List<Station> sukhumvit_stations = StationContent.STATIONS_SUKHUMVIT;
-    private List<Station> silom_stations = StationContent.STATIONS_SILOM;
+    private ArrayList<Station> sukhumvit_stations = StationContent.STATIONS_SUKHUMVIT;
+    private ArrayList<Station> silom_stations = StationContent.STATIONS_SILOM;
 
-    private boolean expand1=false, expand2=false;
+    private boolean expand1=false, expand2=false, liked=false;
 
     private ListView sukhumvitListView,silomListView;
-    private StationAdapter sukhumvitAdapter, silomAdapter;
+    private ImageView like;
+    public static StationAdapter sukhumvitAdapter, silomAdapter;
     private LinearLayout toggleExpand1, toggleExpand2;
 
     @Override
@@ -48,6 +50,8 @@ public class ListViewFragment extends Fragment {
 
         toggleExpand1 = (LinearLayout) view.findViewById(R.id.toggle_expand1);
         toggleExpand2 = (LinearLayout) view.findViewById(R.id.toggle_expand2);
+
+        like = (ImageView) view.findViewById(R.id.fav);
 
         toggleExpand1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +104,16 @@ public class ListViewFragment extends Fragment {
                 startActivity(new Intent(view.getContext(),Popup.class));
             }
         });
+    }
+
+    public void addFav(Station station) {
+        FavoriteStationFragment.favStations.add(station);
+        FavoriteStationFragment.favAdapter.notifyDataSetChanged();
+    }
+
+    public void removeFav(Station staton) {
+        FavoriteStationFragment.favStations.remove(staton);
+        FavoriteStationFragment.favAdapter.notifyDataSetChanged();
     }
 
     public void expand(final View v) {

@@ -16,12 +16,13 @@ import android.widget.LinearLayout;
 import com.wireless.g5.dbtsfragver.content.StationContent;
 import com.wireless.g5.dbtsfragver.content.StationContent.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GridViewFragment extends Fragment {
 
-    private List<Station> sukhumvit_stations = StationContent.STATIONS_SUKHUMVIT;
-    private List<Station> silom_stations = StationContent.STATIONS_SILOM;
+    private ArrayList<Station> sukhumvit_stations = StationContent.STATIONS_SUKHUMVIT;
+    private ArrayList<Station> silom_stations = StationContent.STATIONS_SILOM;
 
     private boolean expand1=false, expand2=false;
 
@@ -38,12 +39,12 @@ public class GridViewFragment extends Fragment {
     @Override
     public void onViewCreated (View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        GridView sukhumvitGridView = (GridView) view.findViewById(R.id.sukhumvit_grid);
-        GridView silomGridView = (GridView) view.findViewById(R.id.silom_grid);
+        sukhumvitGridView = (GridView) view.findViewById(R.id.sukhumvit_grid);
+        silomGridView = (GridView) view.findViewById(R.id.silom_grid);
 
-        final StationAdapter sukhumvitAdapter = new StationAdapter(getContext(), sukhumvit_stations, "type");
+        sukhumvitAdapter = new StationAdapter(getContext(), sukhumvit_stations, "grid");
         sukhumvitGridView.setAdapter(sukhumvitAdapter);
-        StationAdapter silomAdapter = new StationAdapter(getContext(), silom_stations, "type");
+        silomAdapter = new StationAdapter(getContext(), silom_stations, "grid");
         silomGridView.setAdapter(silomAdapter);
 
         toggleExpand1 = (LinearLayout) view.findViewById(R.id.toggle_expand1);

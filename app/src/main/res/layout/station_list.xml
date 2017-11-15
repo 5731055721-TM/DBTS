@@ -1,33 +1,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:descendantFocusability="beforeDescendants"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:descendantFocusability="beforeDescendants"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:padding="20dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <View
-            android:layout_width="20dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"/>
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
         <TextView
             android:id="@+id/station_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textAlignment="center"
-            tools:text="id"/>
+            tools:text="id" />
+
         <TextView
             android:id="@+id/station_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/station_id"
+            android:layout_marginLeft="20dp"
             android:textSize="18sp"
-            tools:text="station name"
-            android:layout_marginLeft="20dp"/>
-    </LinearLayout>
+            tools:text="station name" />
+
+        <ImageView
+            android:id="@+id/fav"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/like_grey"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

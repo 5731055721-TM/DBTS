@@ -84,17 +84,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <GridView
             android:id="@+id/silom_grid"
-            android:paddingEnd="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_height="match_parent"
             android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="24dp"
+            android:gravity="center"
             android:horizontalSpacing="10dp"
-            android:stretchMode="spacingWidthUniform" />
+            android:numColumns="auto_fit"
+            android:paddingEnd="10dp"
+            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="24dp" />
     </LinearLayout>
 
     <View android:id="@+id/separator2"
