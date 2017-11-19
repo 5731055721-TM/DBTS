@@ -28,7 +28,7 @@ public class DensityChartActivity extends AppCompatActivity {
     private final static int INTERVAL = 1000 * 60 / 60 ; //2 minutes
     private Handler mHandler = new Handler();
     private BufferedReader reader;
-    private String[] buffer = new String[4];
+    private String[] buffer = new String[8];
     private int line_count=0;
     private int i=0,a=5;
     private TextView t,n,v,d;
@@ -61,6 +61,10 @@ public class DensityChartActivity extends AppCompatActivity {
                         int populate2 = Integer.parseInt(readLine(buffer[1])[i]);
                         int populate3 = Integer.parseInt(readLine(buffer[2])[i]);
                         int populate4 = Integer.parseInt(readLine(buffer[3])[i]);
+                        int populate5 = Integer.parseInt(readLine(buffer[4])[i]);
+                        int populate6 = Integer.parseInt(readLine(buffer[5])[i]);
+                        int populate7 = Integer.parseInt(readLine(buffer[6])[i]);
+                        int populate8 = Integer.parseInt(readLine(buffer[7])[i]);
 
                         LinearLayout train1 = (LinearLayout) findViewById(R.id.arriving1);
                         LinearLayout train2 = (LinearLayout) findViewById(R.id.arriving2);
@@ -73,7 +77,7 @@ public class DensityChartActivity extends AppCompatActivity {
                         }
 
                         updateDensityLayout(train1,populate1,populate2,populate3,populate4);
-                        updateDensityLayout(train2,populate1,populate2,populate3,populate4);
+                        updateDensityLayout(train2,populate5,populate6,populate7,populate8);
 
 //                        result = populate1 + populate2 + populate3 + populate4;
 
@@ -82,7 +86,7 @@ public class DensityChartActivity extends AppCompatActivity {
                     }
                 });
                 try {
-                    Thread.sleep(800);
+                    Thread.sleep(1500);
                 } catch (InterruptedException e) {  }
             }
         }
@@ -107,6 +111,10 @@ public class DensityChartActivity extends AppCompatActivity {
         buffer[1] = readFile("test2.txt");
         buffer[2] = readFile("test3.txt");
         buffer[3] = readFile("test4.txt");
+        buffer[4] = readFile("test5.txt");
+        buffer[5] = readFile("test6.txt");
+        buffer[6] = readFile("test7.txt");
+        buffer[7] = readFile("test8.txt");
         simulate.start();
     }
 
@@ -141,8 +149,8 @@ public class DensityChartActivity extends AppCompatActivity {
 //        LinearLayout chart = (LinearLayout) findViewById(boggie);
         LinearLayout chart = (LinearLayout) boggie;
         if (populate>=0&&populate<10) chart.setBackgroundColor(getResources().getColor(R.color.green));
-        else if (populate>=10) chart.setBackgroundColor(getResources().getColor(R.color.yellow));
-        else if (populate>=20) chart.setBackgroundColor(getResources().getColor(R.color.orange));
+        else if (populate>=10&&populate<20) chart.setBackgroundColor(getResources().getColor(R.color.yellow));
+        else if (populate>=20&&populate<30) chart.setBackgroundColor(getResources().getColor(R.color.orange));
         else chart.setBackgroundColor(getResources().getColor(R.color.red));
     }
 

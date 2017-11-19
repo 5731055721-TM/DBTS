@@ -42,7 +42,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="   0-10 คน   " />
+                            android:text="   0 - 50 คน   " />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="   10-20 คน   " />
+                            android:text="   50 - 100 คน   " />
                     </LinearLayout>
             </LinearLayout>
                 <View
@@ -81,7 +81,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="   20-30 คน   " />
+                            android:text="   100 - 150 คน   " />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="   > 30 คน   " />
+                            android:text="   > 150 คน   " />
                     </LinearLayout>
                 </LinearLayout>
 

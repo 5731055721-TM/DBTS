@@ -80,7 +80,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="62dp"
                     android:layout_marginTop="11dp"
-                    android:text="คันถัดไป" />
+                    android:text="ขบวนถัดไป" />
                 <include
                     android:id="@+id/arriving2"
                     layout="@layout/density_chart_next" />
