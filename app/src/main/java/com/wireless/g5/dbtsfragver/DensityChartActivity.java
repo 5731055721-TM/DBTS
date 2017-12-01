@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -32,6 +33,7 @@ public class DensityChartActivity extends AppCompatActivity {
     private int line_count=0;
     private int i=0,a=5;
     private TextView t,n,v,d;
+    private String speed;
 
     Runnable mHandlerTask = new Runnable() {
         @Override
@@ -45,7 +47,8 @@ public class DensityChartActivity extends AppCompatActivity {
         @Override
         public void run() {
             // we add 100 new entries
-            for (i = 0; i < line_count; i++) {
+            final int n = readLine(buffer[0]).length;
+            for (i = 0; i < n; i++) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -57,14 +60,16 @@ public class DensityChartActivity extends AppCompatActivity {
                         if(i>20) { d.setText("มาถึงในอีก "+a+" นาที"); a--; }
                         if(a<0) d.setText("กรุณารอที่ชานชลา");
 
+                        int j = n-1-i;
+
                         int populate1 = Integer.parseInt(readLine(buffer[0])[i]);
                         int populate2 = Integer.parseInt(readLine(buffer[1])[i]);
                         int populate3 = Integer.parseInt(readLine(buffer[2])[i]);
                         int populate4 = Integer.parseInt(readLine(buffer[3])[i]);
-                        int populate5 = Integer.parseInt(readLine(buffer[4])[i]);
-                        int populate6 = Integer.parseInt(readLine(buffer[5])[i]);
-                        int populate7 = Integer.parseInt(readLine(buffer[6])[i]);
-                        int populate8 = Integer.parseInt(readLine(buffer[7])[i]);
+                        int populate5 = Integer.parseInt(readLine(buffer[4])[j]);
+                        int populate6 = Integer.parseInt(readLine(buffer[5])[j]);
+                        int populate7 = Integer.parseInt(readLine(buffer[6])[j]);
+                        int populate8 = Integer.parseInt(readLine(buffer[7])[j]);
 
                         LinearLayout train1 = (LinearLayout) findViewById(R.id.arriving1);
                         LinearLayout train2 = (LinearLayout) findViewById(R.id.arriving2);
@@ -86,7 +91,7 @@ public class DensityChartActivity extends AppCompatActivity {
                     }
                 });
                 try {
-                    Thread.sleep(1500);
+                    Thread.sleep(Integer.parseInt(speed)+0);
                 } catch (InterruptedException e) {  }
             }
         }
@@ -107,14 +112,14 @@ public class DensityChartActivity extends AppCompatActivity {
 //        n = (TextView) findViewById(R.id.num_people);
         d = (TextView) findViewById(R.id.detail);
         v.setText(Popup.station+" - "+MainActivity.direction);
-        buffer[0] = readFile("test1.txt");
-        buffer[1] = readFile("test2.txt");
-        buffer[2] = readFile("test3.txt");
-        buffer[3] = readFile("test4.txt");
-        buffer[4] = readFile("test5.txt");
-        buffer[5] = readFile("test6.txt");
-        buffer[6] = readFile("test7.txt");
-        buffer[7] = readFile("test8.txt");
+        buffer[0] = readFile("pi1_out_2017-11-19.txt");
+        buffer[1] = readFile("pi2_out_2017-11-19.txt");
+        buffer[2] = readFile("pi3_out_2017-11-19.txt");
+        buffer[3] = readFile("pi4_out_2017-11-19.txt");
+        buffer[4] = readFile("pi1_out_2017-11-19.txt");
+        buffer[5] = readFile("pi2_out_2017-11-19.txt");
+        buffer[6] = readFile("pi3_out_2017-11-19.txt");
+        buffer[7] = readFile("pi4_out_2017-11-19.txt");
         simulate.start();
     }
 
